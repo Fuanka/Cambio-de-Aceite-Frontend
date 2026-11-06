@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Multimarca - Sistema de Control</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/modals.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo"><i data-lucide="wrench"></i> Taller Multimarca</div>
+        <nav class="menu">
+            <button class="nav-btn active" data-tab="clientes"><i data-lucide="users"></i> Clientes</button>
+            <button class="nav-btn" data-tab="motocicletas"><i data-lucide="bike"></i> Motocicletas</button>
+            <button class="nav-btn" data-tab="ordenes"><i data-lucide="clipboard-list"></i> Órdenes de Trabajo</button>
+            <button class="nav-btn" data-tab="catalogo"><i data-lucide="book-open"></i> Catálogo</button>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <!-- PESTAÑA CLIENTES -->
+        <section id="clientes" class="tab-content active">
+            <div class="topbar">
+                <h1>Gestión de Clientes</h1>
+                <button id="btn-open-cliente" class="btn" style="width: auto;"><i data-lucide="user-plus"></i> Registrar Cliente</button>
+            </div>
+            <div class="card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>ID</th><th>Documento</th><th>Nombre</th><th>Tipo</th><th>Teléfono</th></tr>
+                        </thead>
+                        <tbody id="tbl-clientes"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA MOTOCICLETAS -->
+        <section id="motocicletas" class="tab-content">
+            <div class="topbar">
+                <h1>Gestión de Motocicletas</h1>
+                <button id="btn-open-moto" class="btn" style="width: auto;"><i data-lucide="plus-circle"></i> Registrar Moto</button>
+            </div>
+            <div class="card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>Placa</th><th>Marca</th><th>Modelo</th><th>Propietario</th></tr>
+                        </thead>
+                        <tbody id="tbl-motos"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA ÓRDENES -->
+        <section id="ordenes" class="tab-content">
+            <div class="topbar">
+                <h1>Órdenes de Trabajo</h1>
+                <button id="btn-open-orden" class="btn btn-accent" style="width: auto;"><i data-lucide="file-plus"></i> Crear Nueva Orden</button>
+            </div>
+            <div class="card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>ID</th><th>Motocicleta</th><th>Mecánico</th><th>Servicio</th><th>Estado</th></tr>
+                        </thead>
+                        <tbody id="tbl-ordenes"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA CATÁLOGO -->
+        <section id="catalogo" class="tab-content">
+            <div class="topbar">
+                <h1>Catálogo General</h1>
+            </div>
+            <div class="card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>Tipo</th><th>Descripción</th><th>Precio</th></tr>
+                        </thead>
+                        <tbody id="tbl-catalogo"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="src/app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
